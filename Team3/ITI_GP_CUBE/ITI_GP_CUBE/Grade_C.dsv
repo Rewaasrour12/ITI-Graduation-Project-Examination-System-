@@ -1,0 +1,217 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="e3cc2774-aaa1-48ea-888e-6f2352f1b3b4" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Grade_C</ID>
+  <Name>Grade_C</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>ITI GP DW</DataSourceID>
+  <Schema>
+    <xs:schema id="Grade_C" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Grade_C" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="008bb68a-f2aa-42d0-bafb-284a7183a589">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_Fact_Grade" msprop:DbTableName="Fact_Grade" msprop:FriendlyName="Fact_Grade" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="0f4a40ef-ebc7-4c6d-bd45-7d73836ffd91">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Fact_Grade_PK" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="Fact_Grade_PK" msprop:DbColumnName="Fact_Grade_PK" msprop:design-time-name="f594bfb0-2602-498b-abc3-9f930181776b" type="xs:int" />
+                  <xs:element name="Stud_SSN_FK" msprop:FriendlyName="Stud_SSN_FK" msprop:DbColumnName="Stud_SSN_FK" msprop:design-time-name="37ffebcd-e1c7-48cf-b88b-c784a17858d2" type="xs:int" minOccurs="0" />
+                  <xs:element name="CourseNo_FK" msprop:FriendlyName="CourseNo_FK" msprop:DbColumnName="CourseNo_FK" msprop:design-time-name="d3ebdba3-0806-460b-a69f-c0acd1673523" type="xs:int" minOccurs="0" />
+                  <xs:element name="Grade" msprop:FriendlyName="Grade" msprop:DbColumnName="Grade" msprop:design-time-name="66253692-4309-4523-a298-dc0c72ec5a69" type="xs:int" minOccurs="0" />
+                  <xs:element name="Active" msprop:FriendlyName="Active" msprop:DbColumnName="Active" msprop:design-time-name="840bc519-d433-4608-85d2-fdf539ad0fe0" type="xs:int" minOccurs="0" />
+                  <xs:element name="created_at" msprop:FriendlyName="created_at" msprop:DbColumnName="created_at" msprop:design-time-name="124609ca-0271-4f54-95ca-9e3f17869827" type="xs:dateTime" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimTopics" msprop:DbTableName="DimTopics" msprop:FriendlyName="DimTopics" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="76ed443d-1f70-4fa0-9a44-cf68281c3b71">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Topic_SK" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="Topic_SK" msprop:DbColumnName="Topic_SK" msprop:design-time-name="4044e3b3-867c-4111-a752-90f6231f6c81" type="xs:int" />
+                  <xs:element name="TopicNo_Bk" msprop:FriendlyName="TopicNo_Bk" msprop:DbColumnName="TopicNo_Bk" msprop:design-time-name="7fae4253-d3c8-4bfb-a306-abf68a35073b" type="xs:int" minOccurs="0" />
+                  <xs:element name="TopicName" msprop:FriendlyName="TopicName" msprop:DbColumnName="TopicName" msprop:design-time-name="4ebdfccb-7efa-417d-a57e-93c3d8366f39" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CourseNo_BK" msprop:FriendlyName="CourseNo_BK" msprop:DbColumnName="CourseNo_BK" msprop:design-time-name="ee6ca6d1-dc2e-44b8-83f6-63e92a5f3ebe" type="xs:int" minOccurs="0" />
+                  <xs:element name="SourceSystemCode" msprop:FriendlyName="SourceSystemCode" msprop:DbColumnName="SourceSystemCode" msprop:design-time-name="8cdb40d3-e3a7-4532-b25f-c0a045078fed" type="xs:unsignedByte" minOccurs="0" />
+                  <xs:element name="StartDate" msprop:FriendlyName="StartDate" msprop:DbColumnName="StartDate" msprop:design-time-name="da734b67-e328-47a9-9dad-1fe7dfa2d3f0" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="EndDate" msprop:FriendlyName="EndDate" msprop:DbColumnName="EndDate" msprop:design-time-name="b030f47b-70a9-48a3-b0c3-6e68210d9604" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="IsCurrent" msprop:FriendlyName="IsCurrent" msprop:DbColumnName="IsCurrent" msprop:design-time-name="78136beb-abd7-4b1a-a6a3-e0abdd726783" type="xs:boolean" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimStudent" msprop:DbTableName="DimStudent" msprop:FriendlyName="DimStudent" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="e6f75d01-c0a1-44ec-bdf5-d85aeac0a196">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Student_SK" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="Student_SK" msprop:DbColumnName="Student_SK" msprop:design-time-name="95062d8b-b2eb-4a1b-8ce7-76fe0bc577f7" type="xs:int" />
+                  <xs:element name="SSN_Bk" msprop:FriendlyName="SSN_Bk" msprop:DbColumnName="SSN_Bk" msprop:design-time-name="4b5c1a3a-848e-4a53-9faf-61d5e23aafef" type="xs:int" minOccurs="0" />
+                  <xs:element name="Name" msprop:FriendlyName="Name" msprop:DbColumnName="Name" msprop:design-time-name="f334cd96-e41a-46c9-bcdf-af70d9efb0a9" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Birthdate" msprop:FriendlyName="Birthdate" msprop:DbColumnName="Birthdate" msprop:design-time-name="fc52d86e-115b-4190-8d86-0ae6ab1f9b64" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="City" msprop:FriendlyName="City" msprop:DbColumnName="City" msprop:design-time-name="e237387a-0dc4-426a-bb05-8c1afc26e2f2" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Gender" msprop:FriendlyName="Gender" msprop:DbColumnName="Gender" msprop:design-time-name="d38da892-45a5-4f29-8965-ac3ae7872035" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Email" msprop:FriendlyName="Email" msprop:DbColumnName="Email" msprop:design-time-name="eb9d90f4-e237-44f4-967c-ec20ea150ace" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Faculty" msprop:FriendlyName="Faculty" msprop:DbColumnName="Faculty" msprop:design-time-name="6ce3a8ca-e3c8-40fb-b227-a16529ebfbf7" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="University" msprop:FriendlyName="University" msprop:DbColumnName="University" msprop:design-time-name="7c0913e1-7b5f-44be-885b-7110b05536bc" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Password" msprop:FriendlyName="Password" msprop:DbColumnName="Password" msprop:design-time-name="db98122a-0dfa-45f0-9fbb-8ea7f46656cc" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CompanyNo_BK" msprop:FriendlyName="CompanyNo_BK" msprop:DbColumnName="CompanyNo_BK" msprop:design-time-name="31b18b00-b47e-4391-80dc-0db1b42960bb" type="xs:int" minOccurs="0" />
+                  <xs:element name="Company_Name" msprop:FriendlyName="Company_Name" msprop:DbColumnName="Company_Name" msprop:design-time-name="2f8fbbac-f92a-443e-9b77-a49a9afaf3e8" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Position" msprop:FriendlyName="Position" msprop:DbColumnName="Position" msprop:design-time-name="76378b3b-72d9-4cfc-869b-d30683e61996" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Type" msprop:FriendlyName="Type" msprop:DbColumnName="Type" msprop:design-time-name="083f905e-6c3f-454a-a205-f8b2196f2f4f" type="xs:boolean" minOccurs="0" />
+                  <xs:element name="SourceSystemCode" msprop:FriendlyName="SourceSystemCode" msprop:DbColumnName="SourceSystemCode" msprop:design-time-name="f6fbcac5-4cc1-4ca6-8996-93885149f644" type="xs:unsignedByte" minOccurs="0" />
+                  <xs:element name="StartDate" msprop:FriendlyName="StartDate" msprop:DbColumnName="StartDate" msprop:design-time-name="1a775467-3b48-4e9b-bb5c-774df0bddb56" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="EndDate" msprop:FriendlyName="EndDate" msprop:DbColumnName="EndDate" msprop:design-time-name="c87f8287-2d0a-4644-a9db-6b32091b1b59" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="IsCurrent" msprop:FriendlyName="IsCurrent" msprop:DbColumnName="IsCurrent" msprop:design-time-name="dc74ebb3-98f2-44ae-a48b-0a3706433863" type="xs:boolean" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimCourses" msprop:DbTableName="DimCourses" msprop:FriendlyName="DimCourses" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="7ca0ad70-c4c2-4c6d-8b51-0beeb99d086f">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Course_SK" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="Course_SK" msprop:DbColumnName="Course_SK" msprop:design-time-name="34a29a69-6a6a-4a90-ad66-48e679e912e8" type="xs:int" />
+                  <xs:element name="CourseNo_BK" msprop:FriendlyName="CourseNo_BK" msprop:DbColumnName="CourseNo_BK" msprop:design-time-name="273f06bd-800d-469b-ac90-af96ecc31d9c" type="xs:int" minOccurs="0" />
+                  <xs:element name="CourseName" msprop:FriendlyName="CourseName" msprop:DbColumnName="CourseName" msprop:design-time-name="1582f90d-bd78-4a54-bb67-279578030320" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="SourceSystemCode" msprop:FriendlyName="SourceSystemCode" msprop:DbColumnName="SourceSystemCode" msprop:design-time-name="4719c079-006c-49c3-9832-425f71f79286" type="xs:unsignedByte" minOccurs="0" />
+                  <xs:element name="StartDate" msprop:FriendlyName="StartDate" msprop:DbColumnName="StartDate" msprop:design-time-name="e30016ce-8e1f-4129-a7f7-cf9dc8a7ff13" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="EndDate" msprop:FriendlyName="EndDate" msprop:DbColumnName="EndDate" msprop:design-time-name="1847c8d6-2c31-4a18-9889-d09af9b5829f" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="IsCurrent" msprop:FriendlyName="IsCurrent" msprop:DbColumnName="IsCurrent" msprop:design-time-name="c99c65a7-3c47-435c-a69e-fb038990ff97" type="xs:boolean" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Fact_Grade" />
+          <xs:field xpath="Fact_Grade_PK" />
+        </xs:unique>
+        <xs:unique name="dbo_DimTopics_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimTopics" />
+          <xs:field xpath="Topic_SK" />
+        </xs:unique>
+        <xs:unique name="dbo_DimStudent_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimStudent" />
+          <xs:field xpath="Student_SK" />
+        </xs:unique>
+        <xs:unique name="dbo_DimCourses_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimCourses" />
+          <xs:field xpath="Course_SK" />
+        </xs:unique>
+        <xs:keyref name="FK_DimTopics_DimCourses" refer="dbo_DimCourses_Constraint1">
+          <xs:selector xpath=".//dbo_DimTopics" />
+          <xs:field xpath="CourseNo_BK" />
+        </xs:keyref>
+        <xs:keyref name="FK_Fact_Grade_DimCourses" refer="dbo_DimCourses_Constraint1">
+          <xs:selector xpath=".//dbo_Fact_Grade" />
+          <xs:field xpath="CourseNo_FK" />
+        </xs:keyref>
+        <xs:keyref name="FK_Fact_Grade_DimStudent" refer="dbo_DimStudent_Constraint1">
+          <xs:selector xpath=".//dbo_Fact_Grade" />
+          <xs:field xpath="Stud_SSN_FK" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <Grade_C xmlns="" />
+  </Schema>
+</DataSourceView>

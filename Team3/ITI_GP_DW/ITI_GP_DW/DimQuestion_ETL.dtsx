@@ -1,0 +1,2306 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/24/2024 12:50:49 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-6EL7BT8"
+  DTS:CreatorName="DESKTOP-6EL7BT8\hend atwa"
+  DTS:DTSID="{3C10107C-6836-4A8A-8510-4F5B0E69BA71}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="DimQuestion_ETL"
+  DTS:PackageType="5"
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{9A92BB20-B2F0-40D2-BF9E-CB91CAD99907}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DimQuestion_Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{718E5D74-C2E6-43E9-AB42-ECC54E2A9C98}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DimQuestion_Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DimQuestion_Data Flow Task\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DimQuestion_Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DimQuestion_Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DimQuestion_Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[EndDate]"
+                      dataType="dbTimeStamp"
+                      description="EndDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DimQuestion_Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[EndDate]"
+                      name="EndDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DimQuestion_Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DimQuestion_Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DimQuestion_Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DimQuestion_Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DimQuestion_Data Flow Task\Derived Column 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DimQuestion_Data Flow Task\Derived Column 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DimQuestion_Data Flow Task\Derived Column 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DimQuestion_Data Flow Task\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[StartDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DimQuestion_Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[StartDate]"
+                      name="StartDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[IsCurrent]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DimQuestion_Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[IsCurrent]"
+                      name="IsCurrent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_UI1)1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_UI1)1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DimQuestion_Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DimQuestion_Data Flow Task\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DimQuestion_Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DimQuestion_Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DimQuestion_Data Flow Task\Derived Column_source"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column_source"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DimQuestion_Data Flow Task\Derived Column_source.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DimQuestion_Data Flow Task\Derived Column_source.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DimQuestion_Data Flow Task\Derived Column_source.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Derived Column_source.Outputs[Derived Column Output].Columns[Source_System_Code]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DimQuestion_Data Flow Task\Derived Column_source.Outputs[Derived Column Output].Columns[Source_System_Code]"
+                      name="Source_System_Code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_UI1)1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_UI1)1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DimQuestion_Data Flow Task\Derived Column_source.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DimQuestion_Data Flow Task\Derived Column_source.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Derived Column_source.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DimQuestion_Data Flow Task\Derived Column_source.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Derived Column_source.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DimQuestion_Data Flow Task\Derived Column_source.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DimQuestion_Data Flow Task\Insert Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimQuestion]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DimQuestion_Data Flow Task\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{0E69470E-7AAE-4E5D-85AA-397A02BB3A7A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.ITI_GP_DW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[QNo_BK]"
+                      cachedDataType="i4"
+                      cachedName="QNo_BK"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[QNo_BK]"
+                      lineageId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[QNo_BK]" />
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[Question]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Question"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Question]"
+                      lineageId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Question]" />
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[Choice1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Choice1"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Choice1]"
+                      lineageId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Choice1]" />
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[Choice2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Choice2"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Choice2]"
+                      lineageId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Choice2]" />
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[Choice3]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Choice3"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Choice3]"
+                      lineageId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Choice3]" />
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[Choice4]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Choice4"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Choice4]"
+                      lineageId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Choice4]" />
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[CorrectAnswer]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CorrectAnswer"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CorrectAnswer]"
+                      lineageId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[CorrectAnswer]" />
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[QType]"
+                      cachedDataType="bool"
+                      cachedName="QType"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[QType]"
+                      lineageId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[QType]" />
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[CourseNo]"
+                      cachedDataType="i4"
+                      cachedName="CourseNo"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CourseNo]"
+                      lineageId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[CourseNo]" />
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[Source_System_Code]"
+                      cachedDataType="ui1"
+                      cachedName="Source_System_Code"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[SourceSystemCode]"
+                      lineageId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Source_System_Code]" />
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[StartDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="StartDate"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
+                      lineageId="Package\DimQuestion_Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[StartDate]" />
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[IsCurrent]"
+                      cachedDataType="ui1"
+                      cachedName="IsCurrent"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsCurrent]"
+                      lineageId="Package\DimQuestion_Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[IsCurrent]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Question_SK]"
+                      dataType="i4"
+                      name="Question_SK" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[QNo_BK]"
+                      dataType="i4"
+                      name="QNo_BK" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Question]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Question" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Choice1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Choice1" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Choice2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Choice2" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Choice3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Choice3" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Choice4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Choice4" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CorrectAnswer]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CorrectAnswer" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[QType]"
+                      dataType="bool"
+                      name="QType" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CourseNo]"
+                      dataType="i4"
+                      name="CourseNo" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[SourceSystemCode]"
+                      dataType="ui1"
+                      name="SourceSystemCode" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
+                      dataType="dbTimeStamp"
+                      name="StartDate" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[EndDate]"
+                      dataType="dbTimeStamp"
+                      name="EndDate" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsCurrent]"
+                      dataType="bool"
+                      name="IsCurrent" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DimQuestion_Data Flow Task\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DimQuestion_Data Flow Task\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DimQuestion_Data Flow Task\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DimQuestion_Data Flow Task\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimQuestion] SET [EndDate] = ? 
+, isCurrent=0
+WHERE [QNo_BK] = ? AND [EndDate] IS NULL</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DimQuestion_Data Flow Task\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{0E69470E-7AAE-4E5D-85AA-397A02BB3A7A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.ITI_GP_DW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DimQuestion_Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[QNo_BK]"
+                      cachedDataType="i4"
+                      cachedName="QNo_BK"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[QNo_BK]" />
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[EndDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="EndDate"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\DimQuestion_Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[EndDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="dbTimeStamp"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DimQuestion_Data Flow Task\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\DimQuestion_Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DimQuestion_Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\DimQuestion_Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DimQuestion_Data Flow Task\OLE DB Command 1"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command 1"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimQuestion] SET [Choice1] = ?,[Choice2] = ?,[Choice3] = ?,[Choice4] = ?,[CourseNo] = ? WHERE [QNo_BK] = ? AND [EndDate] IS NULL</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Connections[OleDbConnection]"
+                  connectionManagerID="{0E69470E-7AAE-4E5D-85AA-397A02BB3A7A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.ITI_GP_DW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Choice1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Choice1"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice1]" />
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Choice2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Choice2"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice2]" />
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Choice3]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Choice3"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice3]" />
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Choice4]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Choice4"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice4]" />
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CourseNo]"
+                      cachedDataType="i4"
+                      cachedName="CourseNo"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[CourseNo]" />
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[QNo_BK]"
+                      cachedDataType="i4"
+                      cachedName="QNo_BK"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[QNo_BK]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="i4"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="i4"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source_Question"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select Q.QNo as QNo_BK,q.Question,Q.Choice1,Q.Choice2,Q.Choice3,Q.Choice4,Q.CorrectAnswer,QType,Q.CourseNo
+from Question as Q</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Connections[OleDbConnection]"
+                  connectionManagerID="{DAA231DE-59A8-4DCC-8A72-302C6E75EB97}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.ITI_GP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[QNo_BK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].ExternalColumns[QNo_BK]"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[QNo_BK]"
+                      name="QNo_BK"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Question]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].ExternalColumns[Question]"
+                      length="255"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Question]"
+                      name="Question"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].ExternalColumns[Choice1]"
+                      length="255"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice1]"
+                      name="Choice1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].ExternalColumns[Choice2]"
+                      length="255"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice2]"
+                      name="Choice2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice3]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].ExternalColumns[Choice3]"
+                      length="255"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice3]"
+                      name="Choice3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice4]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].ExternalColumns[Choice4]"
+                      length="255"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice4]"
+                      name="Choice4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[CorrectAnswer]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].ExternalColumns[CorrectAnswer]"
+                      length="255"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[CorrectAnswer]"
+                      name="CorrectAnswer"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[QType]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].ExternalColumns[QType]"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[QType]"
+                      name="QType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[CourseNo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].ExternalColumns[CourseNo]"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[CourseNo]"
+                      name="CourseNo"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].ExternalColumns[QNo_BK]"
+                      dataType="i4"
+                      name="QNo_BK" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].ExternalColumns[Question]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Question" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].ExternalColumns[Choice1]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Choice1" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].ExternalColumns[Choice2]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Choice2" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].ExternalColumns[Choice3]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Choice3" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].ExternalColumns[Choice4]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Choice4" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].ExternalColumns[CorrectAnswer]"
+                      codePage="1252"
+                      dataType="text"
+                      name="CorrectAnswer" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].ExternalColumns[QType]"
+                      dataType="bool"
+                      name="QType" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].ExternalColumns[CourseNo]"
+                      dataType="i4"
+                      name="CourseNo" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Error Output].Columns[QNo_BK]"
+                      dataType="i4"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Error Output].Columns[QNo_BK]"
+                      name="QNo_BK" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Error Output].Columns[Question]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Error Output].Columns[Question]"
+                      name="Question" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Error Output].Columns[Choice1]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Error Output].Columns[Choice1]"
+                      name="Choice1" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Error Output].Columns[Choice2]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Error Output].Columns[Choice2]"
+                      name="Choice2" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Error Output].Columns[Choice3]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Error Output].Columns[Choice3]"
+                      name="Choice3" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Error Output].Columns[Choice4]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Error Output].Columns[Choice4]"
+                      name="Choice4" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Error Output].Columns[CorrectAnswer]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Error Output].Columns[CorrectAnswer]"
+                      name="CorrectAnswer" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Error Output].Columns[QType]"
+                      dataType="bool"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Error Output].Columns[QType]"
+                      name="QType" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Error Output].Columns[CourseNo]"
+                      dataType="i4"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Error Output].Columns[CourseNo]"
+                      name="CourseNo" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Choice1], [Choice2], [Choice3], [Choice4], [CorrectAnswer], [CourseNo], [QNo_BK], [QType], [Question], [SourceSystemCode],[StartDate],[EndDate] FROM [dbo].[DimQuestion]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere">[StartDate] IS NOT NULL AND [EndDate] IS NULL</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="{0E69470E-7AAE-4E5D-85AA-397A02BB3A7A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.ITI_GP_DW]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Choice1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Choice1"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Choice1]"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice1]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Choice2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Choice2"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Choice2]"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice2]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Choice3]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Choice3"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Choice3]"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice3]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Choice4]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Choice4"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Choice4]"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice4]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[CorrectAnswer]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CorrectAnswer"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CorrectAnswer]"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[CorrectAnswer]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[CourseNo]"
+                      cachedDataType="i4"
+                      cachedName="CourseNo"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CourseNo]"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[CourseNo]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[QNo_BK]"
+                      cachedDataType="i4"
+                      cachedName="QNo_BK"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[QNo_BK]"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[QNo_BK]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[QType]"
+                      cachedDataType="bool"
+                      cachedName="QType"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[QType]"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[QType]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Question]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Question"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Question]"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Question]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Source_System_Code]"
+                      cachedDataType="ui1"
+                      cachedName="Source_System_Code"
+                      externalMetadataColumnId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[SourceSystemCode]"
+                      lineageId="Package\DimQuestion_Data Flow Task\Derived Column_source.Outputs[Derived Column Output].Columns[Source_System_Code]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Choice1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Choice1" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Choice2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Choice2" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Choice3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Choice3" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Choice4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Choice4" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CorrectAnswer]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CorrectAnswer" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CourseNo]"
+                      dataType="i4"
+                      name="CourseNo" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[QNo_BK]"
+                      dataType="i4"
+                      name="QNo_BK" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[QType]"
+                      dataType="bool"
+                      name="QType" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Question]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Question" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[SourceSystemCode]"
+                      dataType="ui1"
+                      name="SourceSystemCode" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[StartDate]"
+                      dataType="dbTimeStamp"
+                      name="StartDate" />
+                    <externalMetadataColumn
+                      refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[EndDate]"
+                      dataType="dbTimeStamp"
+                      name="EndDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DimQuestion_Data Flow Task\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 1].Columns[QNo_BK]"
+                      cachedDataType="i4"
+                      cachedName="QNo_BK"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[QNo_BK]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[QNo_BK]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Question]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Question"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Question]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Question]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Choice1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Choice1"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice1]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Choice1]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Choice2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Choice2"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice2]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Choice2]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Choice3]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Choice3"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice3]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Choice3]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Choice4]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Choice4"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice4]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Choice4]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 1].Columns[CorrectAnswer]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CorrectAnswer"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[CorrectAnswer]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[CorrectAnswer]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 1].Columns[QType]"
+                      cachedDataType="bool"
+                      cachedName="QType"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[QType]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[QType]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 1].Columns[CourseNo]"
+                      cachedDataType="i4"
+                      cachedName="CourseNo"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[CourseNo]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[CourseNo]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Source_System_Code]"
+                      cachedDataType="ui1"
+                      cachedName="Source_System_Code"
+                      lineageId="Package\DimQuestion_Data Flow Task\Derived Column_source.Outputs[Derived Column Output].Columns[Source_System_Code]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Source_System_Code]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 2].Columns[QNo_BK]"
+                      cachedDataType="i4"
+                      cachedName="QNo_BK"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[QNo_BK]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[QNo_BK]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 2].Columns[Question]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Question"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Question]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Question]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 2].Columns[Choice1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Choice1"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice1]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Choice1]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 2].Columns[Choice2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Choice2"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice2]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Choice2]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 2].Columns[Choice3]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Choice3"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice3]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Choice3]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 2].Columns[Choice4]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Choice4"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice4]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Choice4]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 2].Columns[CorrectAnswer]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CorrectAnswer"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[CorrectAnswer]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[CorrectAnswer]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 2].Columns[QType]"
+                      cachedDataType="bool"
+                      cachedName="QType"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[QType]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[QType]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 2].Columns[CourseNo]"
+                      cachedDataType="i4"
+                      cachedName="CourseNo"
+                      lineageId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[CourseNo]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[CourseNo]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 2].Columns[Source_System_Code]"
+                      cachedDataType="ui1"
+                      cachedName="Source_System_Code"
+                      lineageId="Package\DimQuestion_Data Flow Task\Derived Column_source.Outputs[Derived Column Output].Columns[Source_System_Code]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Source_System_Code]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[QNo_BK]"
+                      dataType="i4"
+                      lineageId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[QNo_BK]"
+                      name="QNo_BK" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Question]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Question]"
+                      name="Question" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Choice1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Choice1]"
+                      name="Choice1" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Choice2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Choice2]"
+                      name="Choice2" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Choice3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Choice3]"
+                      name="Choice3" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Choice4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Choice4]"
+                      name="Choice4" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[CorrectAnswer]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[CorrectAnswer]"
+                      name="CorrectAnswer" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[QType]"
+                      dataType="bool"
+                      lineageId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[QType]"
+                      name="QType" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[CourseNo]"
+                      dataType="i4"
+                      lineageId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[CourseNo]"
+                      name="CourseNo" />
+                    <outputColumn
+                      refId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Source_System_Code]"
+                      dataType="ui1"
+                      lineageId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Source_System_Code]"
+                      name="Source_System_Code" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DimQuestion_Data Flow Task.Paths[Changing Attribute Updates Output]"
+              endId="Package\DimQuestion_Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input]"
+              name="Changing Attribute Updates Output"
+              startId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
+            <path
+              refId="Package\DimQuestion_Data Flow Task.Paths[Derived Column Output]"
+              endId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="Derived Column Output"
+              startId="Package\DimQuestion_Data Flow Task\Derived Column_source.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DimQuestion_Data Flow Task.Paths[Derived Column Output1]"
+              endId="Package\DimQuestion_Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\DimQuestion_Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DimQuestion_Data Flow Task.Paths[Derived Column Output2]"
+              endId="Package\DimQuestion_Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DimQuestion_Data Flow Task\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DimQuestion_Data Flow Task.Paths[Historical Attribute Inserts Output]"
+              endId="Package\DimQuestion_Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+              name="Historical Attribute Inserts Output"
+              startId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]" />
+            <path
+              refId="Package\DimQuestion_Data Flow Task.Paths[New Output]"
+              endId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 1]"
+              name="New Output"
+              startId="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\DimQuestion_Data Flow Task.Paths[OLE DB Command Output]"
+              endId="Package\DimQuestion_Data Flow Task\Union All.Inputs[Union All Input 2]"
+              name="OLE DB Command Output"
+              startId="Package\DimQuestion_Data Flow Task\OLE DB Command.Outputs[OLE DB Command Output]" />
+            <path
+              refId="Package\DimQuestion_Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\DimQuestion_Data Flow Task\Derived Column_source.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\DimQuestion_Data Flow Task\OLE DB Source_Question.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DimQuestion_Data Flow Task.Paths[Union All Output 1]"
+              endId="Package\DimQuestion_Data Flow Task\Derived Column 1.Inputs[Derived Column Input]"
+              name="Union All Output 1"
+              startId="Package\DimQuestion_Data Flow Task\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="217,42"
+          Id="Package\DimQuestion_Data Flow Task"
+          TopLeft="134.999992623926,77.1333327969578" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DimQuestion_Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="208,42"
+          Id="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension"
+          TopLeft="128.5,209.5" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\DimQuestion_Data Flow Task\Derived Column_source"
+          TopLeft="137.5,107.5" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\DimQuestion_Data Flow Task\OLE DB Source_Question"
+          TopLeft="133,5.5" />
+        <EdgeLayout
+          Id="Package\DimQuestion_Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="232.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimQuestion_Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="232.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\DimQuestion_Data Flow Task\Derived Column"
+          TopLeft="17.5000000000001,311.5" />
+        <EdgeLayout
+          Id="Package\DimQuestion_Data Flow Task.Paths[Historical Attribute Inserts Output]"
+          TopLeft="182.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-88,60"
+              Start="0,0"
+              End="-88,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.506329113924"
+                    Point2="0,20.506329113924"
+                    Point3="-4,20.506329113924" />
+                  <mssgle:LineSegment
+                    End="-84,20.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-84,20.506329113924"
+                    Point2="-88,20.506329113924"
+                    Point3="-88,24.506329113924" />
+                  <mssgle:LineSegment
+                    End="-88,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-119.05638671875,25.506329113924,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166,42"
+          Id="Package\DimQuestion_Data Flow Task\OLE DB Command"
+          TopLeft="5.50000000000006,413.5" />
+        <EdgeLayout
+          Id="Package\DimQuestion_Data Flow Task.Paths[Derived Column Output1]"
+          TopLeft="91.5000000000001,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="121,42"
+          Id="Package\DimQuestion_Data Flow Task\Union All"
+          TopLeft="172,515.5" />
+        <EdgeLayout
+          Id="Package\DimQuestion_Data Flow Task.Paths[New Output]"
+          TopLeft="232.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.8333333333334,264"
+              Start="0,0"
+              End="18.8333333333334,256.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,152.332789559543" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,152.332789559543"
+                    Point2="0,156.332789559543"
+                    Point3="4,156.332789559543" />
+                  <mssgle:LineSegment
+                    End="14.8333333333334,156.332789559543" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.8333333333334,156.332789559543"
+                    Point2="18.8333333333334,156.332789559543"
+                    Point3="18.8333333333334,160.332789559543" />
+                  <mssgle:LineSegment
+                    End="18.8333333333334,256.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-17.6747200520833,161.332789559543,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimQuestion_Data Flow Task.Paths[OLE DB Command Output]"
+          TopLeft="88.5000000000001,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="125.166666666667,60"
+              Start="0,0"
+              End="125.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5301794453507"
+                    Point2="0,35.5301794453507"
+                    Point3="4,35.5301794453507" />
+                  <mssgle:LineSegment
+                    End="121.166666666667,35.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="121.166666666667,35.5301794453507"
+                    Point2="125.166666666667,35.5301794453507"
+                    Point3="125.166666666667,39.5301794453507" />
+                  <mssgle:LineSegment
+                    End="125.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\DimQuestion_Data Flow Task\Derived Column 1"
+          TopLeft="151,617.5" />
+        <EdgeLayout
+          Id="Package\DimQuestion_Data Flow Task.Paths[Union All Output 1]"
+          TopLeft="232.5,557.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\DimQuestion_Data Flow Task\Insert Destination"
+          TopLeft="151,719.5" />
+        <EdgeLayout
+          Id="Package\DimQuestion_Data Flow Task.Paths[Derived Column Output2]"
+          TopLeft="232.5,659.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="175,42"
+          Id="Package\DimQuestion_Data Flow Task\OLE DB Command 1"
+          TopLeft="294,311.5" />
+        <EdgeLayout
+          Id="Package\DimQuestion_Data Flow Task.Paths[Changing Attribute Updates Output]"
+          TopLeft="282.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="99,60"
+              Start="0,0"
+              End="99,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.506329113924"
+                    Point2="0,20.506329113924"
+                    Point3="4,20.506329113924" />
+                  <mssgle:LineSegment
+                    End="95,20.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="95,20.506329113924"
+                    Point2="99,20.506329113924"
+                    Point3="99,24.506329113924" />
+                  <mssgle:LineSegment
+                    End="99,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-29.03390625,25.506329113924,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimQuestion_Data Flow Task\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionID&gt;{0E69470E-7AAE-4E5D-85AA-397A02BB3A7A}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[DimQuestion]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice1]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Choice1&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice2]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Choice2&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice3]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Choice3&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Choice4]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Choice4&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[CorrectAnswer]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;CorrectAnswer&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[CourseNo]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;CourseNo&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[QNo_BK]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;QNo_BK&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[QType]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;QType&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source_Question.Outputs[OLE DB Source Output].Columns[Question]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Question&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Derived Column_source.Outputs[Derived Column Output].Columns[Source_System_Code]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;SourceSystemCode&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn&gt;StartDate&lt;/StartDateColumn&gt;
+  &lt;EndDateColumn&gt;EndDate&lt;/EndDateColumn&gt;
+  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimQuestion_Data Flow Task\OLE DB Source_Question">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimQuestion_Data Flow Task\Insert Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

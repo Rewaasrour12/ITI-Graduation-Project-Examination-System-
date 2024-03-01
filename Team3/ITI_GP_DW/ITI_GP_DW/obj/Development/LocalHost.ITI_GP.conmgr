@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="LocalHost.ITI_GP"
+  DTS:DTSID="{DAA231DE-59A8-4DCC-8A72-302C6E75EB97}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=.;Initial Catalog=ITI_GP;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-ITI_GP_DW-{DAA231DE-59A8-4DCC-8A72-302C6E75EB97}LocalHost.ITI_GP;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

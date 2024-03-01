@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "ITI_GP_DW", "ITI_GP_DW\ITI_GP_DW.dtproj", "{D618A2B3-2FA4-4BB0-877F-9B14FFD87D86}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D618A2B3-2FA4-4BB0-877F-9B14FFD87D86}.Development|Default.ActiveCfg = Development
+		{D618A2B3-2FA4-4BB0-877F-9B14FFD87D86}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {796CB38B-E205-4DCC-9A46-471F9751861F}
+	EndGlobalSection
+EndGlobal
